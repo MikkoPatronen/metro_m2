@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEM Results Summary</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body> 
+    <main>
+        <div class="result-summary">
+            
+            <div class="results grid-flow" data-spacing="large">
+            
+                <p class="result-score"><span>M</span></p>
+
+            </div>
+                
+
+            <div class="summary grid-flow" data-spacing="large">
+
+                <h1 class="section-title">M2 METROMATKA</h1>
+
+                <button class="button", id="playButton">Seuraavana:</button>
+
+                <div class="infotaulu"> 
+                    <div class="teksti" id="audioName">
+
+                    </div>
+                </div>
+                <audio id="audioPlayer" autoplay preload></audio>
+                <!-- </div> -->
+            </div>  
+                
+        </div>
+
+
+
+        <script>
+            var audio_files = [
+                "Rautatientori.mp3",
+                "Kaisaniemi.mp3",
+                "Hakaniemi.mp3",
+                "Sörnäinen.mp3",
+                "Kalasatama.mp3",
+                "Kulosaari.mp3",
+                "Herttoniemi.mp3",
+                "Siilitie.mp3",
+                "Itäkeskus.mp3",
+                "Myllypuro.mp3",
+                "Kontula.mp3",
+                "Mellunmäki.mp3",
+                "Kontula.mp3",
+                "Myllypuro.mp3",
+                "Itäkeskus_.mp3",
+                "Siilitie.mp3",
+                "Herttoniemi.mp3",
+                "Kulosaari.mp3",
+                "Kalasatama.mp3",
+                "Sörnäinen.mp3",
+                "Hakaniemi.mp3",
+                "Kaisaniemi.mp3",
+                "Rautatientori.mp3",
+                "Ruoholahti.mp3"
+                // Lisää muut asemat tähän
+            ];
+            var audio_index = 0;
+
+            document.getElementById("playButton").addEventListener("click", function() {
+                if (audio_index >= audio_files.length) {
+                    audio_index = 0;
+                }
+                
+                var kappale = audio_files[audio_index];
+                document.getElementById("audioPlayer").src = kappale;
+                document.getElementById("audioPlayer").load();
+                document.getElementById("audioPlayer").play();
+                audio_index++;
+                
+                // Päivitä seuraavana tulevan aseman nimi
+                var audioNameElement = document.getElementById("audioName");
+                audioNameElement.textContent = kappale.toUpperCase().replace(".MP3", "").replace("_", " ");
+            });
+            </script>
+            
+    
+    </main>
+        
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

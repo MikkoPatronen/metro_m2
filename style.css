@@ -1,0 +1,273 @@
+@font-face {
+    font-family: 'HankenGrotesk';
+    font-display: swap;
+    font-weight: 100 900;
+    src: url('assets/fonts/HankenGrotesk-VariableFont_wght.ttf') 
+         format('truetype');
+  }
+  
+  :root {
+    --kehikko-harmaa: rgb(85, 88, 92);
+    --metro-punainen: rgb(195, 62, 28);
+    --metro-kupu: rgb(250, 70, 22);
+    --bussi-oranssi: rgb(255, 99, 25);
+    --bussi-sininen: rgb(0, 122, 201);
+    --clr-kehikko-harmaa: 214°, 4%, 35%;
+    --clr-metro-punainen: 1°, 49%, 48%;
+    --clr-bussi-oranssi: 19°, 100%, 55%;
+    --clr-bussi-sininen: 204°, 100%, 39%;
+    --clr-primary-hsl-400: 16, 98%, 49%;
+    --clr-primary-hsl-500: 16, 90%, 40%;
+    --clr-secondary-hsl-400: 16, 89%, 39%;
+    --clr-secondary-hsl-500: 241, 72%, 46%;
+  
+    --clr-neutral-hsl-100: 0, 0%, 100%;
+    --clr-neutral-hsl-200: 221, 100%, 96%;
+    --clr-neutral-hsl-300: 241, 100%, 89%;
+    --clr-neutral-hsl-700: 224, 30%, 27%;
+  
+    --clr-oranssi: hsl(var(--clr-bussi-oranssi));
+    --clr-neutral-100: hsl(var(--clr-neutral-hsl-100));
+    --clr-neutral-200: hsl(var(--clr-neutral-hsl-200));
+    --clr-neutral-300: hsl(var(--clr-neutral-hsl-300));
+    --clr-neutral-700: hsl(var(--clr-neutral-hsl-700));
+  
+  
+    --clr-primary-400: hsl(var(--clr-primary-hsl-400));
+    --clr-primary-500: hsl(var(--clr-primary-hsl-500));
+    --clr-secondary-400: hsl(var(--clr-secondary-hsl-400));
+  
+    --gradient-primary: linear-gradient(
+        var(--clr-primary-400), 
+        var(--clr-secondary-400));
+
+    --gradient-button: linear-gradient(
+        var(--clr-neutral-100), 
+        var(--clr-neutral-hsl-200));
+  
+    --gradient-to-transparent: linear-gradient(
+        var(--clr-primary-500),
+        hsl(var(--clr-primary-hsl-400), 0.9));
+
+    --gradient-tausta: linear-gradient(
+            -130deg,
+            rgba(0, 122, 201, 1) 15%, 
+            rgba(62, 148, 229, 1) 40%, 
+            rgba(98, 174, 255, 1) 75%,
+            rgba(129, 201, 255, 1) 100%);
+    
+    
+        --clr-accent-1: 0, 100%, 67%;
+    --clr-accent-2: 39, 100%, 56%;
+    --clr-accent-3: 166, 100%, 37%;
+    --clr-accent-4: 234, 85%, 45%;
+  
+    --font-family-default: 'HankenGrotesk', sans-serif;
+  
+    --fw-regular: 500;
+    --fw-bold: 700;
+    --fw-black: 800;
+  
+    --fs-400: 1.125rem;
+    --fs-500: 1.25rem;
+    --fs-600: 1.5rem;
+    --fs-700: 1.75rem;
+    --fs-800: 2rem;
+    --fs-900: 5rem;
+    --fs-1000: 20rem;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  * {
+    margin: 0;
+    font: inherit;
+  }
+  
+  img,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  body { 
+    font-family: var(--font-family-default);
+    font-size: var(--fs-400);
+    color: var(--clr-neutral-700);
+  }
+  
+  @media (min-width: 600px) {
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+}
+
+.flex-group {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+
+.grid-flow {
+    display: grid;
+    align-content: start;
+    gap: 1.5rem;
+}
+
+.grid-flow[data-spacing="large"] {
+    gap: 3rem;
+}
+
+.section-title {
+    text-align: center;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-600);
+    color: rgb(255,255,255);
+}
+
+.button {
+    color: var(--clr-neutral-100); 
+    line-height: 1;
+    background: var(--clr-neutral-700);
+    padding: 1rem 2rem;
+    border: 0;
+    border-radius: 100vw;
+    cursor: pointer;
+}
+
+/* .button:hover,
+.button:focus-visible {
+    background: var(--gradient-button);
+} */
+
+.result-summary {
+    --padding: 2.5rem;
+    --border-radius: 2rem;
+    max-width: 46rem;
+    display: grid;
+    /* background: rgb(255, 176, 31); */
+    /* background: var(--bussi-sininen); */
+    background: var(--gradient-tausta);
+    border-radius: var(--border-radius);
+}
+
+@media (min-width: 600px) {
+    .result-summary {
+        margin-inline: 1rem;
+        grid-template-columns: 1fr 1fr;
+        border-radius: var(--border-radius);
+        /* background: var(--bussi-oranssi); */
+        /* background: rgb(255, 176, 31); */
+        /* background: var(--clr-accent-2); */
+        overflow: hidden;
+        box-shadow: .5rem 1rem 3rem 
+        hsl(var(--clr-neutral-hsl-700), .2);
+    }
+}
+
+.results {
+    color: hsl(var(--clr-neutral-hsl-100), .7);
+    text-align: center;
+    padding: 
+    var(--padding) calc(var(--padding) * 1.5);
+    /* background: var(--gradient-to-transparent); */
+    /* background: var(--metro-punainen); */
+    border-radius: 
+    0 0 var(--border-radius) var(--border-radius);
+}
+
+@media (min-width: 600px) {
+    .results {
+        border-radius: var(--border-radius);
+        /* overflow: hidden; */
+    }
+}
+
+.result-score {
+    display: grid;
+    place-content: center;  
+    width: 18rem;
+    margin-inline: auto;
+    background: var(--gradient-primary);
+    /* background: var(--metro-kupu); */
+    /* aspect-ratio: 1 / 1;
+    border-radius: 50%; */
+}
+
+.result-score span {
+    font-family: 'helvetica medium', sans-serif, monospace;
+    /* font-size: 380px; */
+    display: block;
+    font-size: var(--fs-1000); 
+    font-weight: var(--fw-black);
+    line-height: 1;
+    color: var(--clr-neutral-100); 
+}
+
+.result-rank {
+    color: var(--clr-neutral-100);
+    font-size: var(--fs-700);
+    font-weight: var(--fw-bold);
+}
+
+.summary {
+    /* position: relative; */
+    top: 380px;
+    padding: 2.2rem;
+    /* background: rgb(255, 176, 31); */
+    border-radius: 
+    0 0 var(--border-radius) var(--border-radius);
+}
+
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: .5rem;
+    /* background-color: hsl(var(--item-color), .1); */
+}
+
+
+  .infotaulu {
+    background-color: black;
+    color: #CFFF04;
+    font-size: 27px;
+    font-family: Arial, sans-serif, monospace;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    /* width: 270px; */
+    /* width: 80%; */
+    overflow: hidden;
+    /* margin-top: 15px; */
+}
+
+.teksti {
+    position: absolute;
+    top: 13%;
+    right: 100%;
+    animation: liuku 6s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes liuku {
+    0% { right: -90%; }
+    25% { right: 5%; }
+    75% { right: 20%; }
+    100% { right: 100%; }
+}
+
+#audioPlayer {
+    /* position: absolute; */
+    /* margin-bottom: 45px; */
+    /* z-index: 0; */
+}
