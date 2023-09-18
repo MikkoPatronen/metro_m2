@@ -74,7 +74,7 @@
     --fs-700: 1.75rem;
     --fs-800: 2rem;
     --fs-900: 5rem;
-    --fs-1000: 20rem;
+    --fs-1000: 14rem;
   }
   
   *,
@@ -88,23 +88,24 @@
     font: inherit;
   }
   
-  img,
+  /* img,
   svg {
     display: block;
     max-width: 100%;
-  }
+  } */
   
   body { 
     font-family: var(--font-family-default);
     font-size: var(--fs-400);
     color: var(--clr-neutral-700);
+    min-height: 100vh;
+    place-items: center;
   }
   
   @media (min-width: 600px) {
     body {
-      min-height: 100vh;
       display: grid;
-      place-items: center;
+      /* place-items: center; */
     }
 }
 
@@ -117,7 +118,7 @@
 
 .grid-flow {
     display: grid;
-    align-content: start;
+    /* align-content: start; */
     gap: 1.5rem;
 }
 
@@ -140,6 +141,7 @@
     border: 0;
     border-radius: 100vw;
     cursor: pointer;
+    min-width: 10rem;
 }
 
 /* .button:hover,
@@ -150,8 +152,11 @@
 .result-summary {
     --padding: 2.5rem;
     --border-radius: 2rem;
-    max-width: 46rem;
+    /* min-width: 100vw; */
+    /* min-height: 100vh; */
     display: grid;
+    place-items: center;
+    align-content: center;
     /* background: rgb(255, 176, 31); */
     /* background: var(--bussi-sininen); */
     background: var(--gradient-tausta);
@@ -174,6 +179,7 @@
 
 .results {
     color: hsl(var(--clr-neutral-hsl-100), .7);
+    max-width: 26rem;
     text-align: center;
     padding: 
     var(--padding) calc(var(--padding) * 1.5);
@@ -193,7 +199,7 @@
 .result-score {
     display: grid;
     place-content: center;  
-    width: 18rem;
+    width: 14rem;
     margin-inline: auto;
     background: var(--gradient-primary);
     /* background: var(--metro-kupu); */
@@ -211,15 +217,16 @@
     color: var(--clr-neutral-100); 
 }
 
-.result-rank {
+/* .result-rank {
     color: var(--clr-neutral-100);
     font-size: var(--fs-700);
     font-weight: var(--fw-bold);
-}
+} */
 
 .summary {
     /* position: relative; */
-    top: 380px;
+    /* top: 380px; */
+    max-width: 26rem;
     padding: 2.2rem;
     /* background: rgb(255, 176, 31); */
     border-radius: 
@@ -231,8 +238,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 3rem;
     border-radius: .5rem;
+    max-width: 23rem;
     /* background-color: hsl(var(--item-color), .1); */
 }
 
@@ -240,11 +248,12 @@
   .infotaulu {
     background-color: black;
     color: #CFFF04;
-    font-size: 27px;
+    font-size: 1.7rem;
     font-family: Arial, sans-serif, monospace;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 1.25rem;
+    border-radius: .5rem;
     position: relative;
+    max-width: 23rem;
     /* width: 270px; */
     /* width: 80%; */
     overflow: hidden;
@@ -266,8 +275,3 @@
     100% { right: 100%; }
 }
 
-#audioPlayer {
-    /* position: absolute; */
-    /* margin-bottom: 45px; */
-    /* z-index: 0; */
-}
